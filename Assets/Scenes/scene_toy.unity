@@ -956,7 +956,7 @@ MonoBehaviour:
   trigger_type: 10
   trigger_target: {fileID: 1673614940}
   trigger_actor: {fileID: 11400000, guid: 5e4f6bbf226f55948b6e9ce12afd55bc, type: 2}
-  trigger_limit: 1
+  trigger_limit: 0
   dialogue_type: 0
   pause_gameplay: 1
   skipable: 0
@@ -1468,7 +1468,7 @@ MonoBehaviour:
   trigger_type: 10
   trigger_target: {fileID: 1880257200}
   trigger_actor: {fileID: 0}
-  trigger_limit: 1
+  trigger_limit: 0
   dialogue_type: 0
   pause_gameplay: 0
   skipable: 0
