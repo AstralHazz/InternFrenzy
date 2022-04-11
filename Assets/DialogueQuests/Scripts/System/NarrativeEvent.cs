@@ -100,6 +100,7 @@ namespace DialogueQuests
 
         void Start()
         {
+
             if (trigger_type == NarrativeEventType.AtStart)
             {
                 OnTriggerEvent();
@@ -192,6 +193,7 @@ namespace DialogueQuests
 
         public void Trigger(Actor player)
         {
+
             if (NarrativeManager.Get().GetCurrent() != this)
             {
                 last_triggerer = player;
@@ -201,6 +203,8 @@ namespace DialogueQuests
 
         public void TriggerIfConditionsMet(Actor player)
         {
+
+
             if (AreConditionsMet(player))
             {
                 Trigger(player);

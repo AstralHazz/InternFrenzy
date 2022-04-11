@@ -10,6 +10,8 @@ namespace DialogueQuests
 {
     public class NarrativeManager : MonoBehaviour
     {
+        public static bool GameIsPaused = false;
+
         public UnityAction<NarrativeEvent> onEventStart;
         public UnityAction<NarrativeEvent> onEventEnd;
 
@@ -98,10 +100,18 @@ namespace DialogueQuests
                 }
                 else if (current_event_line == null && current_event != null && event_line_queue.Count == 0)
                 {
+                    if (GameIsPaused)
+                        Resume();
+                    else
+                        Pause();
                     StopEvent();
                 }
                 else if (current_event == null && trigger_list.Count > 0)
                 {
+                    if (GameIsPaused)
+                        Resume();
+                    else
+                        Pause();
                     NarrativeEvent next = GetPriorityTriggerList();
                     trigger_list.Clear();
                     StartEvent(next);
@@ -170,8 +180,10 @@ namespace DialogueQuests
 
         public void StartEvent(NarrativeEvent narrative_event)
         {
+
             if (current_event != narrative_event)
             {
+
                 StopEvent();
 
                 //Debug.Log("Start Cinematic: " + cinematic_trigger.gameObject.name);
@@ -203,6 +215,7 @@ namespace DialogueQuests
 
         public void StopEvent()
         {
+
             StopDialogue();
 
             if (current_event != null)
@@ -256,6 +269,18 @@ namespace DialogueQuests
             }
         }
 
+        void Resume()
+        {
+            FindObjectOfType<vThirdPersonCamera>().lockCamera = false;
+            GameIsPaused = false;
+        }
+
+        void Pause()
+        {
+            FindObjectOfType<vThirdPersonCamera>().lockCamera = true;
+            GameIsPaused = true;
+        }
+
         public void StartDialogue(DialogueMessage dialogue)
         {
             StopDialogue();
@@ -278,6 +303,7 @@ namespace DialogueQuests
 
         public void SelectChoice(int choice_index)
         {
+
             if (current_event_line != null && current_event_line.GetChoice(choice_index) != null) {
 
                 StopDialogue();
@@ -293,6 +319,7 @@ namespace DialogueQuests
 
         public void StopDialogue()
         {
+
             if (current_message != null) {
 
                 if (current_message.onEnd != null)

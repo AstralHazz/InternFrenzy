@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor_id: SBot
   is_player: 0
-  title: SpiderBot
+  title: Lloyd
   portrait: {fileID: 0}
   animation: {fileID: 0}
   show_bubble: 1
