@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/IntroMenu.unity
+    guid: 596e392a3d0f5b14caf99972da8af250
+  - enabled: 1
+    path: Assets/Scenes/Bigger Toy.unity
+    guid: 03813c09825d2154593cb1d1efc45c5a
   m_configObjects: {}
