@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using DialogueQuests;
 
 namespace DialogueQuests
 {
@@ -11,6 +12,7 @@ namespace DialogueQuests
 
     public class NarrativeControls : MonoBehaviour
     {
+
         public KeyCode talk_key = KeyCode.Space;
         public KeyCode journal_key = KeyCode.J;
         public KeyCode cancel_key = KeyCode.Backspace;
@@ -143,7 +145,14 @@ namespace DialogueQuests
         private void OnPressJournal()
         {
             if (onPressJournal != null)
+            {
                 onPressJournal.Invoke();
+
+                if (FindObjectOfType<DialogueQuests.NarrativeManager>().gameIsPaused == true)
+                    FindObjectOfType<DialogueQuests.NarrativeManager>().Resume();
+                else if (FindObjectOfType<DialogueQuests.NarrativeManager>().gameIsPaused == false)
+                    FindObjectOfType<DialogueQuests.NarrativeManager>().Pause();
+            }
         }
 
         public Vector2 GetUIMove()

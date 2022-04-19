@@ -58,15 +58,10 @@ public class vThirdPersonCamera : MonoBehaviour
 
     #endregion
 
-    void Awake()
+    void Start()
     {
-        GameStateManager.Instance.OnGameStateChanged += OnGameStateChanged;
         Init();
-    }
-
-    private void OnDestroy()
-    {
-        GameStateManager.Instance.OnGameStateChanged -= OnGameStateChanged;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void Init()
@@ -252,10 +247,5 @@ public class vThirdPersonCamera : MonoBehaviour
         }
 
         return hitInfo.collider && value;
-    }
-
-    private void OnGameStateChanged(GameState newGameState)
-    {
-        enabled = newGameState == GameState.Gameplay;
     }
 }
