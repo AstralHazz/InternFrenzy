@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu_Script : MonoBehaviour
 {
+
     public void PlayLevel1()
     {
         SceneManager.LoadScene("Bigger Toy"); //Put name of main scene in here
