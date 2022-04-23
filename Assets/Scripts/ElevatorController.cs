@@ -21,7 +21,7 @@ public class ElevatorController : MonoBehaviour
     {
         if (elevatorReady)
         {
-            if (Input.GetAxis("Mouse ScrollWheel") > 0f) // Floor Up
+            if (Input.GetMouseButtonDown(0)) // Floor Up
             {
                 if (this.gameObject.name == "Ground Floor")
                 {
@@ -34,7 +34,7 @@ public class ElevatorController : MonoBehaviour
                     player.transform.position = new Vector3(player.transform.position.x, thirdFloor.transform.position.y, player.transform.position.z);
                 }
             }
-            else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // Floor Down
+            else if (Input.GetMouseButtonDown(1)) // Floor Down
             {
                 if (this.gameObject.name == "Third Floor")
                 {

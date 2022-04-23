@@ -8,7 +8,7 @@ public class MainMenu_Script : MonoBehaviour
 
     public void PlayLevel1()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Put name of main scene in here
+        SceneManager.LoadScene("Riley_Version"); //Put name of main scene in here
     }
 /*
     public void PlayLevel2()

@@ -47,8 +47,8 @@ namespace Invector.vCharacterController
             if (!disabled)
             {
                 InputHandle();                  // update the input methods
-                cc.UpdateAnimator();            // updates the Animator Parameters
             }
+                cc.UpdateAnimator();            // updates the Animator Parameters
         }
 
         public virtual void OnAnimatorMove()
