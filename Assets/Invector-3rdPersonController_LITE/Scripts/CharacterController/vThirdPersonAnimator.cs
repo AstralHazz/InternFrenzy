@@ -32,7 +32,11 @@ namespace Invector.vCharacterController
                 animator.SetFloat(vAnimatorParameters.InputVertical, stopMove ? 0 : verticalSpeed, freeSpeed.animationSmooth, Time.deltaTime);
             }
 
-            animator.SetFloat(vAnimatorParameters.InputMagnitude, stopMove ? 0f : inputMagnitude, isStrafing ? strafeSpeed.animationSmooth : freeSpeed.animationSmooth, Time.deltaTime);
+
+            if (FindObjectOfType<Invector.vCharacterController.vThirdPersonInput>().disabled == false)
+                animator.SetFloat(vAnimatorParameters.InputMagnitude, stopMove ? 0f : inputMagnitude, isStrafing ? strafeSpeed.animationSmooth : freeSpeed.animationSmooth, Time.deltaTime);
+            else
+                animator.SetFloat(vAnimatorParameters.InputMagnitude, 0f);
         }
 
         public virtual void SetAnimatorMoveSpeed(vMovementSpeed speed)

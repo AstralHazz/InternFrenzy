@@ -21,6 +21,8 @@ namespace Invector.vCharacterController
         [HideInInspector] public vThirdPersonCamera tpCamera;
         [HideInInspector] public Camera cameraMain;
 
+        public bool disabled = false;
+
         #endregion
 
         protected virtual void Start()
@@ -31,15 +33,22 @@ namespace Invector.vCharacterController
 
         protected virtual void FixedUpdate()
         {
-            cc.UpdateMotor();               // updates the ThirdPersonMotor methods
-            cc.ControlLocomotionType();     // handle the controller locomotion type and movespeed
-            cc.ControlRotationType();       // handle the controller rotation type
+            if (!disabled)
+            {
+                cc.UpdateMotor();               // updates the ThirdPersonMotor methods
+                cc.ControlLocomotionType();     // handle the controller locomotion type and movespeed
+                cc.ControlRotationType();       // handle the controller rotation type
+            }
+            
         }
 
         protected virtual void Update()
         {
-            InputHandle();                  // update the input methods
-            cc.UpdateAnimator();            // updates the Animator Parameters
+            if (!disabled)
+            {
+                InputHandle();                  // update the input methods
+            }
+                cc.UpdateAnimator();            // updates the Animator Parameters
         }
 
         public virtual void OnAnimatorMove()

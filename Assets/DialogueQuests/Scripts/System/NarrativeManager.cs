@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Invector.vCharacterController;
 
 /// <summary>
 /// Main manager script for dialogues and quests
@@ -10,7 +11,7 @@ namespace DialogueQuests
 {
     public class NarrativeManager : MonoBehaviour
     {
-        public static bool GameIsPaused = false;
+        public bool gameIsPaused = false;
 
         public UnityAction<NarrativeEvent> onEventStart;
         public UnityAction<NarrativeEvent> onEventEnd;
@@ -100,7 +101,7 @@ namespace DialogueQuests
                 }
                 else if (current_event_line == null && current_event != null && event_line_queue.Count == 0)
                 {
-                    if (GameIsPaused)
+                    if (gameIsPaused)
                         Resume();
                     else
                         Pause();
@@ -108,7 +109,7 @@ namespace DialogueQuests
                 }
                 else if (current_event == null && trigger_list.Count > 0)
                 {
-                    if (GameIsPaused)
+                    if (gameIsPaused)
                         Resume();
                     else
                         Pause();
@@ -269,16 +270,20 @@ namespace DialogueQuests
             }
         }
 
-        void Resume()
+        public void Resume()
         {
             FindObjectOfType<vThirdPersonCamera>().lockCamera = false;
-            GameIsPaused = false;
+            FindObjectOfType<Invector.vCharacterController.vThirdPersonInput>().disabled = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            gameIsPaused = false;
         }
 
-        void Pause()
+        public void Pause()
         {
             FindObjectOfType<vThirdPersonCamera>().lockCamera = true;
-            GameIsPaused = true;
+            FindObjectOfType<Invector.vCharacterController.vThirdPersonInput>().disabled = true;
+            Cursor.lockState = CursorLockMode.Confined;
+            gameIsPaused = true;
         }
 
         public void StartDialogue(DialogueMessage dialogue)
