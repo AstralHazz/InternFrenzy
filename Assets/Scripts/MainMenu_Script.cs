@@ -25,4 +25,11 @@ public class MainMenu_Script : MonoBehaviour
     {
         SceneManager.LoadScene("IntroMenu");
     }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit Game");
+        Application.Quit();
+
+    }
 }
