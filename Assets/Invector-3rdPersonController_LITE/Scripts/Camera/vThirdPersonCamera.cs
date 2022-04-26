@@ -56,12 +56,15 @@ public class vThirdPersonCamera : MonoBehaviour
     private float cullingHeight = 0.2f;
     private float cullingMinDist = 0.1f;
 
+    public bool isPaused = false;
+
     #endregion
 
     void Start()
     {
         Init();
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void Init()

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61ea64a65dc7f514d84608bd9fa6b23b, type: 3}
   m_Name: Emory
   m_EditorClassIdentifier: 
-  actor_id: SBot
+  actor_id: Em
   is_player: 0
   title: Emory
   portrait: {fileID: 0}

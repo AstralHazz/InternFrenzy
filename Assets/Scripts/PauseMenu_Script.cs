@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu_Script : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
+    public bool GameIsPaused = false;
 
-    public GameObject pauseMenuUI;
+    public GameObject pauseMenUI;
 
     void Update()
     {
@@ -27,24 +27,28 @@ public class PauseMenu_Script : MonoBehaviour
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);
+        pauseMenUI.SetActive(false);
         Time.timeScale = 1f;
-        AudioListener.pause = false;
+        //AudioListener.pause = false;
         GameIsPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     void Pause()
     {
-        pauseMenuUI.SetActive(true);
+        pauseMenUI.SetActive(true);
         Time.timeScale = 0f;
-        AudioListener.pause = true;
+        //AudioListener.pause = true;
         GameIsPaused = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
 
     public void LoadMenu()
 
     {
         Time.timeScale = 1f;
-        pauseMenuUI.SetActive(false);
+        pauseMenUI.SetActive(false);
         Time.timeScale = 1f;
         AudioListener.pause = false;
         GameIsPaused = false;

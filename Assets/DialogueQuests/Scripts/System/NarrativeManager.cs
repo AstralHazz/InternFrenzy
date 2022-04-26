@@ -275,6 +275,7 @@ namespace DialogueQuests
             FindObjectOfType<vThirdPersonCamera>().lockCamera = false;
             FindObjectOfType<Invector.vCharacterController.vThirdPersonInput>().disabled = false;
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             gameIsPaused = false;
         }
 
@@ -283,6 +284,7 @@ namespace DialogueQuests
             FindObjectOfType<vThirdPersonCamera>().lockCamera = true;
             FindObjectOfType<Invector.vCharacterController.vThirdPersonInput>().disabled = true;
             Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
             gameIsPaused = true;
         }
 
