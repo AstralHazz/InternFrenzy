@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Riley_Version.unity
     guid: e9f5555a36b99a74e9d83335483b1aa9
+  - enabled: 1
+    path: Assets/Scenes/FinalSplash.unity
+    guid: f0d1ea8df9ff8f940913fe2ceecfe3fd
   m_configObjects: {}

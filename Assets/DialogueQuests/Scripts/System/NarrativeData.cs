@@ -23,6 +23,7 @@ namespace DialogueQuests
     [System.Serializable]
     public class NarrativeData
     {
+        public static int completedQuestsNum = 0;
         public string filename;
         public string version;
         public DateTime last_save;
@@ -109,6 +110,7 @@ namespace DialogueQuests
         {
             if (IsQuestStarted(quest_id))
                 quests_status[quest_id] = 2;
+            completedQuestsNum += 1;
         }
 
         public void FailQuest(string quest_id)

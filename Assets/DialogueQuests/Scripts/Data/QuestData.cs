@@ -97,7 +97,9 @@ namespace DialogueQuests
             foreach (QuestData aquest in GetAll())
             {
                 if (NarrativeData.Get().IsQuestActive(aquest.quest_id) || NarrativeData.Get().IsQuestCompleted(aquest.quest_id))
+                {
                     valid_list.Add(aquest);
+                }
             }
             return valid_list;
         }
@@ -108,7 +110,9 @@ namespace DialogueQuests
             foreach (QuestData aquest in GetAll())
             {
                 if (NarrativeData.Get().IsQuestActive(aquest.quest_id) || NarrativeData.Get().IsQuestFailed(aquest.quest_id))
+                {
                     valid_list.Add(aquest);
+                }
             }
             return valid_list;
         }

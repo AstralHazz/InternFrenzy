@@ -356,6 +356,7 @@ namespace DialogueQuests
 
         public void CompleteQuest(QuestData quest)
         {
+            //DialogueQuests.NarrativeData.completedQuestsNum += 1;
             if (quest != null && NarrativeData.Get().IsQuestActive(quest.quest_id))
             {
                 NarrativeData.Get().CompleteQuest(quest.quest_id);

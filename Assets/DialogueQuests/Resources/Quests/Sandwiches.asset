@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2e207a509725314f8a9d840dbfc8b08, type: 3}
-  m_Name: MalCoffee
+  m_Name: Sandwiches
   m_EditorClassIdentifier: 
-  quest_id: coffee_1
-  title: Go Get Coffee
+  quest_id: Sandwich
+  title: Get Sandwiches
   icon: {fileID: 21300000, guid: 82926008314e65947a236f012cf8c641, type: 3}
-  desc: Dan  needs some coffee, go get him some!
+  desc: Jackie wants you to get her a sandwich from the kitchen
   sort_order: 0
