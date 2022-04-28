@@ -15,5 +15,5 @@ MonoBehaviour:
   quest_id: Get_Task_1
   title: Get your first task
   icon: {fileID: 21300000, guid: 82926008314e65947a236f012cf8c641, type: 3}
-  desc: Talk to Marvin, Emory, or someone else
+  desc: Go talk to Emory
   sort_order: 0

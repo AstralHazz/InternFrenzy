@@ -22,6 +22,7 @@ namespace Invector.vCharacterController
         [HideInInspector] public Camera cameraMain;
 
         public bool disabled = false;
+        public bool cameraDisabled = false;
 
         #endregion
 
@@ -119,7 +120,8 @@ namespace Invector.vCharacterController
             var Y = Input.GetAxis(rotateCameraYInput);
             var X = Input.GetAxis(rotateCameraXInput);
 
-            tpCamera.RotateCamera(X, Y);
+            if(!cameraDisabled)
+                tpCamera.RotateCamera(X, Y);
         }
 
         protected virtual void StrafeInput()
