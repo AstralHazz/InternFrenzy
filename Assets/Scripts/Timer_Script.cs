@@ -10,12 +10,12 @@ public class Timer_Script : MonoBehaviour
     public float timeRemaining = 10;
     public bool timerIsRunning = false;
     public Text timeText;
-    public int score = DialogueQuests.NarrativeData.completedQuestsNum;
 
     private void Start()
     {
         // Starts the timer automatically
         timerIsRunning = true;
+        DialogueQuests.NarrativeData.NewGame("New Game");
     }
     void Update()
     {
